@@ -22,7 +22,7 @@ app.use(cors({
 
 app.use(express.json());
 
-app.listen(8080, () => {
+app.listen(process.env.PORT, () => {
     console.log('Server is running on http://localhost:8080');
 });
 
