@@ -3,12 +3,13 @@ const {google} = require('googleapis');
 const helmet = require('helmet');
 const cors = require('cors');
 const session = require('express-session');
+require('dotenv').config()
 
 const axios = require('axios');
 
 const moduleManagerInstance = require('./core/moduleManager');
 
-require('dotenv').config()
+
 
 const {register: register_auth} = require('./auth/auth_general');
 const {register: register_broadcast} = require('./broadcastRoom/room_general');
@@ -23,7 +24,7 @@ app.use(cors({
 app.use(express.json());
 
 app.listen(process.env.PORT, () => {
-    console.log('Server is running on http://localhost:8080');
+    console.log('Server is running on http://localhost:'+ process.env.PORT);
 });
 
 app.use(session({

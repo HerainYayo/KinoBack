@@ -1,5 +1,6 @@
 const { MongoClient } = require('mongodb');
 const uri = process.env.DB_URL;
+console.log(uri)
 const client = new MongoClient(uri);
 
 const dictionary = {};
