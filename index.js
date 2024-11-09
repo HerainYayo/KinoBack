@@ -34,6 +34,11 @@ app.use(session({
     cookie: { secure: false }
 }));
 
+app.get('/', (req, res) => {
+    res.send('Hello World!');
+  });
+  
+
 
 
 register_auth(app, moduleManagerInstance);
