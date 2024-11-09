@@ -23,9 +23,7 @@ app.use(cors({
 
 app.use(express.json());
 
-app.listen(process.env.PORT, () => {
-    console.log('Server is running on http://localhost:'+ process.env.PORT);
-});
+
 
 app.use(session({
     secret: 'mySecret',
@@ -44,3 +42,7 @@ app.get('/', (req, res) => {
 register_auth(app, moduleManagerInstance);
 
 register_broadcast(app, moduleManagerInstance);
+
+app.listen(process.env.PORT, () => {
+    console.log('Server is running on http://localhost:'+ process.env.PORT || 3000);
+});
